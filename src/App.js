@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import api from './api'
 
@@ -7,22 +6,25 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-
+      'BTC':'',    
+      'ETH':'',
+      'LTC':''
     }
   }
 
   componentDidMount(){
     api.mainApp((data)=>{
-      console.log(data)
+      this.setState({"BTC":data['BTC']['USD']})
+      this.setState({"ETH":data['ETH']['USD']})
+      this.setState({"LTC":data['LTC']['USD']})
     })
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+      <div>
+        <p>BTC: {this.state.BTC}</p>
+        <p>ETH: {this.state.ETH}</p>
+        <p>LTC: {this.state.LTC}</p>
       </div>
     );
   }
