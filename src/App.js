@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       'BTC':'',    
       'ETH':'',
-      'LTC':''
+      'LTC':'',
+      'XRP':''
     }
   }
 
@@ -17,6 +18,7 @@ class App extends Component {
       this.setState({"BTC":data['BTC']['USD']})
       this.setState({"ETH":data['ETH']['USD']})
       this.setState({"LTC":data['LTC']['USD']})
+      this.setState({"XRP":data['XRP']['USD']})
     })
   }
   render() {
@@ -26,6 +28,7 @@ class App extends Component {
         <p>BTC: {this.state.BTC}</p>
         <p>ETH: {this.state.ETH}</p>
         <p>LTC: {this.state.LTC}</p>
+        <p>XRP: {this.state.XRP}</p>
       </div>
     );
   }

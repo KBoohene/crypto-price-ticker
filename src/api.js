@@ -7,7 +7,7 @@ let xhr = new XMLHttpRequest();
 const api_func = {
   mainApp(data) {
     setInterval(function(){
-      xhr.open('GET', 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC&tsyms=USD', true)
+      xhr.open('GET', 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,XRP&tsyms=USD', true)
       xhr.send();
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
