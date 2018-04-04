@@ -14,7 +14,8 @@ class App extends Component {
       'XRP':''
     }
   }
-
+  
+  //Constant update of crypto prices
   componentDidMount(){
     api.mainApp((data)=>{
       this.setState({"BTC":data['BTC']['USD']})

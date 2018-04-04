@@ -5,6 +5,7 @@
 let xhr = new XMLHttpRequest();
 
 const api_func = {
+  //Async function to retrieve crypto prices
   mainApp(data) {
     setInterval(function(){
       xhr.open('GET', 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,XRP&tsyms=USD', true)
