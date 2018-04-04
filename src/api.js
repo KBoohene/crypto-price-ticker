@@ -1,6 +1,5 @@
 /**
- * Tutorial link - https://hackernoon.com/build-a-cryptocurrency-price-tracker-in-5-minutes-d66c3d37ad71
- * Class is based on the approach implemented by Joe Hanson in the above tutorial
+ * 
  */
 
 let xhr = new XMLHttpRequest();
@@ -12,7 +11,7 @@ const api_func = {
       xhr.send();
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          data(xhr.responseText);
+          data(JSON.parse(xhr.response));
         }
       }
     }, 10000)
