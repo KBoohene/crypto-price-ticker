@@ -1,5 +1,5 @@
 /**
- * 
+ * Class to pull prices from cryptocompare website
  */
 
 let xhr = new XMLHttpRequest();
