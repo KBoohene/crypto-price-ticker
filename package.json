@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.4.0",
+    "elemental": "^0.6.1",
     "react": "^16.3.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.3.1"
   },
   "devDependencies": {
