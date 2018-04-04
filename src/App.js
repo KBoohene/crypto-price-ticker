@@ -25,30 +25,32 @@ class App extends Component {
   }
   render() {
     return (
-      <Container>
-        <Header as='h1' textAlign='center'>
-          First Header
-        </Header>
-        <Divider />
-        <Grid columns={2} divided celled>
-          <Grid.Row>
-            <Grid.Column>
-              BTC: {this.state.BTC}
-            </Grid.Column>
-            <Grid.Column>
-              ETH: {this.state.ETH}
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              LTC: {this.state.LTC}
-            </Grid.Column>
-            <Grid.Column>
-              XRP: {this.state.XRP}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
+      <div className="container">
+        <Container>
+          <Header as='h1' textAlign='center'>
+            First Header
+          </Header>
+          <Divider />
+          <Grid columns={2} celled>
+            <Grid.Row>
+              <Grid.Column>
+                BTC: ${this.state.BTC}
+              </Grid.Column>
+              <Grid.Column>
+                ETH: ${this.state.ETH}
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                LTC: ${this.state.LTC}
+              </Grid.Column>
+              <Grid.Column>
+                XRP: ${this.state.XRP}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </div>
     );
   }
 }
