@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import api from './api'
+import 'semantic-ui-css/semantic.min.css';
+import { Grid } from 'semantic-ui-react'
 
 class App extends Component {
   constructor(props){
@@ -24,11 +26,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Prices</h1>
-        <p>BTC: {this.state.BTC}</p>
-        <p>ETH: {this.state.ETH}</p>
-        <p>LTC: {this.state.LTC}</p>
-        <p>XRP: {this.state.XRP}</p>
+        <Grid columns={2}>
+        <Grid.Row>
+          <Grid.Column>
+          BTC: {this.state.BTC}
+          </Grid.Column>
+          <Grid.Column>
+          ETH: {this.state.ETH}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+          LTC: {this.state.LTC}
+          </Grid.Column>
+          <Grid.Column>
+          XRP: {this.state.XRP}
+          </Grid.Column>
+        </Grid.Row>
+        </Grid>
       </div>
     );
   }
