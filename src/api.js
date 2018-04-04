@@ -3,15 +3,20 @@
  * Class is based on the approach implemented by Joe Hanson in the above tutorial
  */
 
-
-const PubNub = require('pubnub')
-let pubnub = new PubNub({
-  publishKey:   'pub-c-33a2ae63-300b-40a1-ba2b-a54f9ff210a5',
-  subscribeKey: 'sub-c-43036b5c-380c-11e8-8e6f-1abf34272f4e'
-});
 let xhr = new XMLHttpRequest();
 
-api_func = {
+const api_func = {
+  mainApp(data) {
+    setInterval(function(){
+      xhr.open('GET', 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC&tsyms=USD', true)
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          data(xhr.responseText);
+        }
+      }
+    }, 10000)
+  },
 
 }
 
