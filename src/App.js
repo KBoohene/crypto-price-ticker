@@ -12,6 +12,10 @@ class App extends Component {
       'ETH':'',
       'LTC':'',
       'XRP':'',
+      'DASH':'',
+      'EOS':'',
+      'NEO':'',
+      'BCH':'',
       'activeItem':'home',
     }
   }
@@ -19,6 +23,7 @@ class App extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   //Constant update of crypto prices
+  //TODO: Set state for the remainder of the cryptos
   componentDidMount(){
     api.mainApp((data)=>{
       this.setState({"BTC":data['BTC']['USD']});
@@ -80,28 +85,28 @@ class App extends Component {
               <Grid.Column>
                 <Card fluid raised>
                   <Card.Content>
-                    Dash: $
+                    DASH: ${this.state.DASH}
                   </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
                   <Card.Content>
-                    NEO: $
+                    NEO: ${this.state.NEO}
                   </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
                   <Card.Content>
-                    BCH: $
+                    BCH: ${this.state.BCH}
                   </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column >
                 <Card fluid raised>
                   <Card.Content>
-                    EOS: $
+                    EOS: ${this.state.EOS}
                   </Card.Content>
                 </Card>
               </Grid.Column>
