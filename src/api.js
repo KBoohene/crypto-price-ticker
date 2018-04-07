@@ -5,6 +5,7 @@
 let xhr = new XMLHttpRequest();
 
 const api_func = {
+  //TODO: Get prices for EOS, DASH, BCH, NEO 
   //Async function to retrieve crypto prices
   mainApp(data) {
     setInterval(function(){
