@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import api from './api'
 import 'semantic-ui-css/semantic.min.css';
-import { Grid, Divider, Header, Container, Menu, Input } from 'semantic-ui-react'
+import { Grid, Divider, Header, Container, Menu, Input, Card } from 'semantic-ui-react'
 
 class App extends Component {
   constructor(props){
@@ -17,6 +17,7 @@ class App extends Component {
   }
   
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   //Constant update of crypto prices
   componentDidMount(){
     api.mainApp((data)=>{
@@ -41,36 +42,68 @@ class App extends Component {
         </Menu>
         <Container>
           <Header as='h1' textAlign='center'>
-            First Header
+            Top 8 Cryptos
           </Header>
           <Divider />
-          <Grid columns={4} celled>
+          <Grid columns={4}>
             <Grid.Row>
               <Grid.Column>
-                BTC: ${this.state.BTC}
+                <Card fluid raised>
+                  <Card.Content>
+                    BTC: ${this.state.BTC}
+                  </Card.Content>
+                </Card>
               </Grid.Column>
               <Grid.Column>
-                ETH: ${this.state.ETH}
+                <Card fluid raised>
+                  <Card.Content>
+                    ETH: ${this.state.ETH}
+                  </Card.Content>
+                </Card>
               </Grid.Column>
               <Grid.Column>
-                LTC: ${this.state.LTC}
+                <Card fluid raised>
+                  <Card.Content>
+                    LTC: ${this.state.LTC}
+                  </Card.Content>
+                </Card>
               </Grid.Column>
               <Grid.Column>
-                XRP: ${this.state.XRP}
+                <Card fluid raised>
+                  <Card.Content>
+                    XRP: ${this.state.XRP}
+                  </Card.Content>
+                </Card>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-            <Grid.Column>
-                Dash: $
+              <Grid.Column>
+                <Card fluid raised>
+                  <Card.Content>
+                    Dash: $
+                  </Card.Content>
+                </Card>
               </Grid.Column>
               <Grid.Column>
-                NEO: $
+                <Card fluid raised>
+                  <Card.Content>
+                    NEO: $
+                  </Card.Content>
+                </Card>
               </Grid.Column>
               <Grid.Column>
-                BCH: $
+                <Card fluid raised>
+                  <Card.Content>
+                    BCH: $
+                  </Card.Content>
+                </Card>
               </Grid.Column>
-              <Grid.Column>
-                EOS: $
+              <Grid.Column >
+                <Card fluid raised>
+                  <Card.Content>
+                    EOS: $
+                  </Card.Content>
+                </Card>
               </Grid.Column>
             </Grid.Row>
           </Grid>
