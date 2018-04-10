@@ -20,7 +20,7 @@ const api_func = {
           data(JSON.parse(xhr.response));
         }
       };
-    }, 10000);
+    }, 5000);
   }
 };
 
