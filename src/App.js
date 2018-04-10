@@ -11,6 +11,8 @@ import {
   Input,
   Card
 } from "semantic-ui-react";
+import { img_32 } from "./crypto-imgs/img_dir";
+const crypto_images = require.context("./crypto-imgs", true);
 
 class App extends Component {
   constructor(props) {
@@ -28,25 +30,45 @@ class App extends Component {
     };
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = (e, { name }) =>
+    this.setState({
+      activeItem: name
+    });
 
   //Constant update of crypto prices
   componentDidMount() {
     api.mainApp(data => {
-      this.setState({ BTC: data["BTC"]["USD"] });
-      this.setState({ ETH: data["ETH"]["USD"] });
-      this.setState({ LTC: data["LTC"]["USD"] });
-      this.setState({ XRP: data["XRP"]["USD"] });
-      this.setState({ BCH: data["BCH"]["USD"] });
-      this.setState({ NEO: data["NEO"]["USD"] });
-      this.setState({ DASH: data["DASH"]["USD"] });
-      this.setState({ EOS: data["EOS"]["USD"] });
+      this.setState({
+        BTC: data["BTC"]["USD"]
+      });
+      this.setState({
+        ETH: data["ETH"]["USD"]
+      });
+      this.setState({
+        LTC: data["LTC"]["USD"]
+      });
+      this.setState({
+        XRP: data["XRP"]["USD"]
+      });
+      this.setState({
+        BCH: data["BCH"]["USD"]
+      });
+      this.setState({
+        NEO: data["NEO"]["USD"]
+      });
+      this.setState({
+        DASH: data["DASH"]["USD"]
+      });
+      this.setState({
+        EOS: data["EOS"]["USD"]
+      });
     });
   }
   render() {
     const { activeItem } = this.state;
     return (
       <div className="container">
+        <img alt="bch-32-icon" src={crypto_images(img_32.black.bch)} />
         <Menu secondary>
           <Menu.Item
             name="home"
@@ -73,44 +95,44 @@ class App extends Component {
             <Grid.Row>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>BTC: ${this.state.BTC}</Card.Content>
+                  <Card.Content> BTC: $ {this.state.BTC} </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>ETH: ${this.state.ETH}</Card.Content>
+                  <Card.Content> ETH: $ {this.state.ETH} </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>LTC: ${this.state.LTC}</Card.Content>
+                  <Card.Content> LTC: $ {this.state.LTC} </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>XRP: ${this.state.XRP}</Card.Content>
+                  <Card.Content> XRP: $ {this.state.XRP} </Card.Content>
                 </Card>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>DASH: ${this.state.DASH}</Card.Content>
+                  <Card.Content> DASH: $ {this.state.DASH} </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>NEO: ${this.state.NEO}</Card.Content>
+                  <Card.Content> NEO: $ {this.state.NEO} </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>BCH: ${this.state.BCH}</Card.Content>
+                  <Card.Content> BCH: $ {this.state.BCH} </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content>EOS: ${this.state.EOS}</Card.Content>
+                  <Card.Content> EOS: $ {this.state.EOS} </Card.Content>
                 </Card>
               </Grid.Column>
             </Grid.Row>
