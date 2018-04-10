@@ -68,7 +68,6 @@ class App extends Component {
     const { activeItem } = this.state;
     return (
       <div className="container">
-        <img alt="bch-32-icon" src={crypto_images(img_32.black.bch)} />
         <Menu secondary>
           <Menu.Item
             name="home"
@@ -95,44 +94,87 @@ class App extends Component {
             <Grid.Row>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> BTC: $ {this.state.BTC} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img
+                        alt="btc-32-color"
+                        src={crypto_images(img_32.color.btc)}
+                      />
+                    </span>
+                    <span>BTC: $ {this.state.BTC}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> ETH: $ {this.state.ETH} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.eth)} />
+                    </span>
+                    <span>ETH: $ {this.state.ETH}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> LTC: $ {this.state.LTC} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.ltc)} />
+                    </span>
+                    <span> LTC: $ {this.state.LTC}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> XRP: $ {this.state.XRP} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.xrp)} />
+                    </span>
+                    <span>XRP: $ {this.state.XRP}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> DASH: $ {this.state.DASH} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.dash)} />
+                    </span>
+                    <span>DASH: $ {this.state.DASH}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> NEO: $ {this.state.NEO} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.neo)} />
+                    </span>
+                    <span>NEO: $ {this.state.NEO}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> BCH: $ {this.state.BCH} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.bch)} />
+                    </span>
+                    <span>BCH: $ {this.state.BCH}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column>
                 <Card fluid raised>
-                  <Card.Content> EOS: $ {this.state.EOS} </Card.Content>
+                  <Card.Content>
+                    <span style={styles.crypto_imgs}>
+                      <img alt="" src={crypto_images(img_32.color.eos)} />
+                    </span>
+                    <span>EOS: $ {this.state.EOS}</span>
+                  </Card.Content>
                 </Card>
               </Grid.Column>
             </Grid.Row>
@@ -142,5 +184,11 @@ class App extends Component {
     );
   }
 }
+
+let styles = {
+  crypto_imgs: {
+    padding: 10
+  }
+};
 
 export default App;
